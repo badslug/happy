@@ -1,0 +1,165 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* CSS Reset Done */
+body {
+    padding: 1em;
+}
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: .5em;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #ddd;
+}
+p {
+    margin-bottom: .5em;
+}
+a {
+    text-decoration: none;
+}
+
+.active {
+    font-weight: bold;
+    background-color: #eee;
+}
+
+.hidden {
+    display: none;
+}
+
+.panel {
+    display: block;
+    border: 1px solid #ddd;
+    margin: 0;
+    padding: 1em;
+}
+
+ul#tabs {
+    margin: 1em .5em .5em .5em;
+    list-style: none;
+}
+
+#tabs li {
+    display: inline;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    margin: 1em 1em 1em 1em;
+    padding: .5em .5em .5em .5em;
+}
+table {
+    margin: 2em 0;
+}
+thead {
+    border-bottom: 1px solid #ddd;
+}
+tr {
+    padding: .5em;
+}
+td, th {
+    padding: .5em;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 1em;
+}
+
+form {
+    margin: 1em 0;
+}
+
+input {
+    width: 4em;
+}
+
+label {
+    margin-left: 1em;
+    font-weight: bolder;
+}
+
+h3 {
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+h3.happy {
+    background-color: greenyellow;
+    font-size: larger;
+    padding: .3em;
+}
+
+h3.unhappy {
+    background-color: lightpink;
+    font-size: larger;
+    padding: .2em;
+}
+
+table.tight {
+    margin: .3em 0;
+    padding: 0 .3em;
+}
+
+.tight thead {
+    border-bottom: 1px solid #ddd;
+}
+
+.tight tr {
+    padding: .1em;
+}
+
+.tight td, th {
+    padding: .1em .3em;
+    text-align: left;
+}

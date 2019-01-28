@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Happy Number</title>
+    <meta name="description" content="Happy Number Generator">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- <link rel="manifest" href="src/site.webmanifest"> -->
+    <!-- <link rel="apple-touch-icon" href="src/icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<h1>Happy Numbers</h1>
+<p>Let's generate some <a href="https://en.wikipedia.org/wiki/Happy_number">happy numbers</a>.</p>
+
+<script>
+    const pages = ['brute', 'compare', 'info']
+    const panels = []
+    const tabs = []
+    function activateTab(active) {
+        for (let i = 0; i < pages.length; i++) {
+            let panel = panels[i]
+            let page = pages[i]
+            let tab = tabs[i]
+            if (!panel) {
+                panels[i] = document.getElementById(page)
+                panel = panels[i]
+            }
+            if (!tab) {
+                tabs[i] = document.getElementById(page+'-tab')
+                tab = tabs[i]
+            }
+            if (page === active) {
+                panel.setAttribute('class', 'panel')
+                tab.setAttribute('class', 'active')
+            } else {
+                panel.setAttribute('class', 'hidden')
+                tab.setAttribute('class', '')
+            }
+        }
+    }
+</script>
+
+<ul id="tabs">
+    <li id="brute-tab" class="active"><a href="javascript:activateTab('brute')">Detailed</a></li>
+    <li id="compare-tab"><a href="javascript:activateTab('compare')">Compare</a></li>
+    <li id="info-tab"><a href="javascript:activateTab('info')">Info</a></li>
+</ul>
+
+<div id="panels">
+    <div class="panel" id="brute">
+        <p>Demonstration of the happy number search and detection algorithm.</p>
+        <form id="form">
+            <label for="seed">Start:</label> <input type="number" id="seed" value="4" min="0">
+            <label for="count">Count:</label> <input type="number" id="count" value="5" min="0">
+        </form>
+        <table>
+            <thead>
+            <tr>
+                <th>First</th><th>Tested</th><th>Found</th><th>Elapsed (ms)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="brute-start"></td><td id="brute-tested"></td><td id="brute-count"></td><td id="brute-elapsed"></td>
+            </tr>
+            </tbody>
+        </table>
+        <h1>Details</h1>
+        <p>Below we show the steps taken to test each number to see if its happy or unhappy.</p>
+        <div id="details"></div>
+    </div>
+    <div class="hidden" id="compare">
+        <p>Two versions of the Happy Number checker were written, one with that followed the algorithm precisely ("brute"), while the other took short cuts based on knowledge of the behavior of the algorithm ("happy). Performance differences may vary between browsers.</p>
+
+        <p>Select/adjust the starting number and number of happy numbers to search for below:</p>
+
+        <form id="form-compare">
+            <label for="seed-compare">Start:</label> <input type="number" id="seed-compare" value="0" min="0">
+            <label for="count-compare">Count:</label> <input type="number" id="count-compare" value="500" min="0">
+        </form>
+
+        <table>
+            <thead>
+            <tr><th>Brute</th><th>Happy</th><th>%</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="brute-speed"></td><td id="happy-speed"><td id="speed"></td>
+            </tr>
+            </tbody>
+        </table>
+        <p>Notes:</p>
+        <ul>
+            <li>Times in milliseconds.</li>
+            <li>% shows the happy speed as a percentage of the brute force speed.</li>
+            <li>Happy algorithm cheats for happy numbers under 1000 so speed improvements should be checked with numbers starting above 1000 for actual algorithm improvements.</li>
+        </ul>
+    </div>
+    <div class="hidden" id="info"> A happy number is defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits in base-ten, and repeat the process until the number either equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. Those numbers for which this process ends in 1 are happy numbers, while those that do not end in 1 are unhappy numbers (or sad numbers). <a href="https://en.wikipedia.org/wiki/Happy_number">Read more...</a></div>
+</div>
+<script type="module" src="./happy_ui.js"></script>
+</body>
+</html>

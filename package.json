@@ -1,0 +1,22 @@
+{
+  "name": "happy",
+  "version": "1.0.0",
+  "description": "Happy number generator",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha -r esm"
+  },
+  "keywords": [
+    "happy number",
+    "happy"
+  ],
+  "author": "Iain Shigeoka",
+  "license": "unlicense",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "esm": "^3.1.4"
+  }
+}
