@@ -1,5 +1,5 @@
 import expect from 'expect.js'
-import {brute, happy, search} from '../static/happy'
+import {brute, happy, search} from '../static/happy.js'
 
 let matches = new Set([1, 7, 10, 13, 19, 23])
 
